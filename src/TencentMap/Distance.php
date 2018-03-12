@@ -3,7 +3,7 @@
 namespace TencentMap;
 
 /**
- * 单起点到多终点，或多起点到单终点的路线距离（非直线距离）计算
+ * 单起点到多终点，或多起点到单终点的路线距离（非直线距离）计算.
  *
  * 起点到终点最大限制直线距离10公里
  *
@@ -20,8 +20,11 @@ class Distance
      * @param array       $to
      * @param bool        $jsonFormat
      * @param string|null $callback
-     * @return mixed
+     *
      * @throws Error\TencentMapError
+     *
+     * @return mixed
+     *
      * @example
      *
      * <pre>
@@ -41,7 +44,7 @@ class Distance
             'from' => implode(';', $from),
             'to' => implode(';', $to),
             'output' => $output,
-            'callback' => $callback
+            'callback' => $callback,
         ];
 
         $data = array_merge($data, $this->mode);

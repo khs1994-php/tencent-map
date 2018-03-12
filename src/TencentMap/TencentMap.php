@@ -7,7 +7,6 @@ use Curl\Error\CurlError;
 use TencentMap\Error\TencentMapError;
 
 /**
- *
  * @method  AddressToLocation   addressToLocation()
  * @method  Distance            distance()
  * @method  District            district()
@@ -34,6 +33,7 @@ class TencentMap
 
     /**
      * TencentMap constructor.
+     *
      * @param string $appKey
      */
     private function __construct(string $appKey)
@@ -44,13 +44,14 @@ class TencentMap
 
     private function __clone()
     {
-        /**
+        /*
          *  Private clone
          */
     }
 
     /**
      * @param string $appKey
+     *
      * @return TencentMap
      */
     public static function tencentMap(string $appKey)
@@ -65,8 +66,10 @@ class TencentMap
     /**
      * @param string $url
      * @param array  $data
-     * @return mixed
+     *
      * @throws TencentMapError
+     *
+     * @return mixed
      */
     public static function exec(string $url, array $data)
     {
@@ -93,12 +96,13 @@ class TencentMap
      *
      * @param $name
      * @param $arguments
+     *
      * @return mixed
      */
     public function __call($name, $arguments)
     {
         switch ($name) {
-            case "ip":
+            case 'ip':
                 return new IP();
                 break;
         }

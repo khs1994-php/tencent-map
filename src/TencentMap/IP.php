@@ -15,8 +15,10 @@ class IP
      * @param string      $ip
      * @param bool        $jsonFormat
      * @param string|null $callback
-     * @return mixed
+     *
      * @throws Error\TencentMapError
+     *
+     * @return mixed
      */
     public function exec(string $ip, bool $jsonFormat = true, string $callback = null)
     {
@@ -28,6 +30,5 @@ class IP
         ];
 
         return TencentMap::exec(self::URL, $data);
-
     }
 }

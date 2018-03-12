@@ -21,8 +21,10 @@ class LocationToAddress
      * @param int         $page_index
      * @param string      $jsonFormat
      * @param string|null $callback
-     * @return mixed
+     *
      * @throws Error\TencentMapError
+     *
+     * @return mixed
      */
     public function exec(string $location,
                          int $coord_type = 5,
@@ -45,10 +47,9 @@ class LocationToAddress
             'page_index' => $page_index,
             'policy' => $policy,
             'output' => $output,
-            'callback' => $callback
+            'callback' => $callback,
         ];
 
         return TencentMap::exec(self::URL, $data);
-
     }
 }

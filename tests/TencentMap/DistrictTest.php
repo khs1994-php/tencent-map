@@ -48,5 +48,4 @@ class DistrictTest extends TencentMapTests
         file_put_contents(__DIR__.'/../output/district'.$this->name.'.json', $this->output);
         $this->assertEquals(0, json_decode($this->output)->status);
     }
-
 }

@@ -2,8 +2,8 @@
 
 namespace TencentMap\Tests;
 
-use PHPUnit\Framework\TestCase;
 use TencentMap\TencentMap;
+use PHPUnit\Framework\TestCase;
 
 class TencentMapTests extends TestCase
 {
