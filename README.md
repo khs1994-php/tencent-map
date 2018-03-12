@@ -4,7 +4,7 @@
 
 ## Installation
 
-To Use XXX SDK, simply:
+To Use Tencent Map SDK, simply:
 
 ```bash
 $ composer require khs1994/tencent-map
@@ -23,6 +23,26 @@ $ composer require khs1994/tencent-map @dev
 
 require __DIR__.'/vendor/autoload.php';
 
+use TencentMap\{
+    Error\TencentMapError,
+    TencentMap
+};
+
+const APP_KEY = 'GTOBZ-63LW6-7N6SX-MRRVB-LECGJ-XXXXX';
+
+$map = TencentMap::tencentMap(APP_KEY);
+
+// must try-catch
+
+try {
+    $search = $map->search();
+    $search->setBoundaryRegion('北京');
+    $output = $search->exec('酒店');
+} catch (TencentMapError $e) {
+    die($e->getMessage());
+}
+
+var_dump($output);
 ```
 
 ## PHP CaaS
