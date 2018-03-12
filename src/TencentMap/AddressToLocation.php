@@ -3,7 +3,7 @@
 namespace TencentMap;
 
 /**
- * 由地址描述到所述位置坐标的转换
+ * 由地址描述到所述位置坐标的转换.
  *
  * @link http://lbs.qq.com/webservice_v1/guide-geocoder.html
  */
@@ -15,8 +15,10 @@ class AddressToLocation
      * @param string      $address
      * @param bool        $jsonFormat
      * @param string|null $callback
-     * @return mixed
+     *
      * @throws Error\TencentMapError
+     *
+     * @return mixed
      */
     public function exec(string $address, bool $jsonFormat = true, string $callback = null)
     {
@@ -25,7 +27,7 @@ class AddressToLocation
         $data = [
             'address' => $address,
             'output' => $output,
-            'callback' => $callback
+            'callback' => $callback,
         ];
 
         return TencentMap::exec(self::URL, $data);

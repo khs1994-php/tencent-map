@@ -23,7 +23,7 @@ class DistanceTest extends TencentMapTests
         $this->name = 'Driving';
         $distance = $this->getMap()->distance();
         $distance->setModeDriving();
-        $this->output = $distance->exec(["39.996059,116.353454"], ["39.983171,116.308479", "39.949226,116.394309"]);
+        $this->output = $distance->exec(['39.996059,116.353454'], ['39.983171,116.308479', '39.949226,116.394309']);
     }
 
     /**
@@ -34,7 +34,7 @@ class DistanceTest extends TencentMapTests
         $this->name = 'Walking';
         $distance = $this->getMap()->distance();
         $distance->setModeWalking();
-        $this->output = $distance->exec(["39.996059,116.353454"], ["39.983171,116.308479", "39.949226,116.394309"]);
+        $this->output = $distance->exec(['39.996059,116.353454'], ['39.983171,116.308479', '39.949226,116.394309']);
     }
 
     public function tearDown()
@@ -42,6 +42,4 @@ class DistanceTest extends TencentMapTests
         file_put_contents(__DIR__.'/../output/distance'.$this->name.'.json', $this->output);
         $this->assertEquals(0, json_decode($this->output)->status);
     }
-
-
 }

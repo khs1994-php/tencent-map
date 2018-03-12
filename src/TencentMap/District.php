@@ -3,7 +3,7 @@
 namespace TencentMap;
 
 /**
- * 提供中国标准行政区划数据，可用于生成城市列表控件等功能时使用
+ * 提供中国标准行政区划数据，可用于生成城市列表控件等功能时使用.
  *
  * @link http://lbs.qq.com/webservice_v1/guide-region.html
  */
@@ -23,15 +23,17 @@ class District
 
     /**
      * @param string url
-     * @return mixed
+     *
      * @throws Error\TencentMapError
+     *
+     * @return mixed
      */
     private function exec(string $url)
     {
         $output = $this->format ? 'json' : 'jsonp';
         $data = [
             'output' => $output,
-            'callback' => $this->callback
+            'callback' => $this->callback,
         ];
 
         $data = array_merge($data, $this->data);
@@ -40,8 +42,9 @@ class District
     }
 
     /**
-     * @return mixed
      * @throws Error\TencentMapError
+     *
+     * @return mixed
      */
     public function list()
     {
@@ -50,8 +53,10 @@ class District
 
     /**
      * @param int $id
-     * @return mixed
+     *
      * @throws Error\TencentMapError
+     *
+     * @return mixed
      */
     public function getChildren(int $id)
     {
@@ -62,8 +67,10 @@ class District
 
     /**
      * @param string $keyWord
-     * @return mixed
+     *
      * @throws Error\TencentMapError
+     *
+     * @return mixed
      */
     public function search(string $keyWord)
     {

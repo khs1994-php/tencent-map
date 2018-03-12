@@ -3,7 +3,7 @@
 namespace TencentMap;
 
 /**
- * 使用参数设定地图位置、缩放级别、叠加标注和路线等，系统就会返回一张静态地图图片
+ * 使用参数设定地图位置、缩放级别、叠加标注和路线等，系统就会返回一张静态地图图片.
  *
  * @link http://lbs.qq.com/static_v2/index.html
  */
@@ -42,8 +42,10 @@ class StaticMap
      * @param string $markers
      * @param string $labels
      * @param string $path
-     * @return mixed
+     *
      * @throws Error\TencentMapError
+     *
+     * @return mixed
      */
     public function exec(string $center,
                          string $size = '960*540',
@@ -53,8 +55,7 @@ class StaticMap
                          string $markers = null,
                          string $labels = null,
                          string $path = null
-    )
-    {
+    ) {
         $scale = $scale ? 2 : 1;
 
         $data = [
@@ -73,5 +74,4 @@ class StaticMap
 
         return TencentMap::exec(self::URL, $data);
     }
-
 }

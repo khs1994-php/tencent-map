@@ -5,7 +5,7 @@ namespace TencentMap;
 use TencentMap\Error\TencentMapError;
 
 /**
- * 地点搜索
+ * 地点搜索.
  *
  * @link  http://lbs.qq.com/webservice_v1/guide-search.html
  */
@@ -18,7 +18,6 @@ class Search
     public $boundary = null;
 
     /**
-     *
      * @param string      $keyword
      * @param string      $filter
      * @param string      $orderBy
@@ -26,8 +25,11 @@ class Search
      * @param int         $page_index 第x页，默认第1页
      * @param bool        $jsonFormat
      * @param string|null $callback   JSONP 方式回调函数
-     * @return mixed
+     *
      * @throws TencentMapError
+     *
+     * @return mixed
+     *
      * @example
      *                                <pre>
      *                                keyword = '酒店';
@@ -61,7 +63,7 @@ class Search
             throw new TencentMapError(null, 310);
         }
 
-        $jsonFormat = $jsonFormat ? "JSON" : "JSONP";
+        $jsonFormat = $jsonFormat ? 'JSON' : 'JSONP';
 
         $url = self::URL;
 
@@ -73,7 +75,7 @@ class Search
             'page_size' => $page_size,
             'page_index' => $page_index,
             'output' => $jsonFormat,
-            'callback' => $callback
+            'callback' => $callback,
         ];
 
         $data = array_filter($data);
@@ -82,7 +84,7 @@ class Search
     }
 
     /**
-     * 搜索地理范围 -> 指定地区名称
+     * 搜索地理范围 -> 指定地区名称.
      *
      * @param string     $city
      * @param bool       $autoExtend 若当前城市搜索无结果，则自动扩大范围或仅在当前城市搜索
@@ -99,7 +101,7 @@ class Search
     }
 
     /**
-     * 搜索地理范围 -> 周边搜索
+     * 搜索地理范围 -> 周边搜索.
      *
      * @param float $lat
      * @param float $lng    经度纬度确定一点
@@ -111,7 +113,7 @@ class Search
     }
 
     /**
-     * 搜索地理范围 -> 矩形搜索
+     * 搜索地理范围 -> 矩形搜索.
      *
      * @param float $lat        左下经度
      * @param float $lng        左下纬度
@@ -125,6 +127,5 @@ class Search
 
     public function setFilter()
     {
-
     }
 }

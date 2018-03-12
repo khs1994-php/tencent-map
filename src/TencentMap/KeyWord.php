@@ -3,7 +3,7 @@
 namespace TencentMap;
 
 /**
- * 用于获取输入关键字的补完与提示，帮助用户快速输入
+ * 用于获取输入关键字的补完与提示，帮助用户快速输入.
  *
  * @link http://lbs.qq.com/webservice_v1/guide-suggestion.html
  */
@@ -20,8 +20,10 @@ class KeyWord
      * @param string|null $orderby
      * @param bool        $jsonFormat
      * @param string|null $callback
-     * @return mixed
+     *
      * @throws Error\TencentMapError
+     *
+     * @return mixed
      */
     public function exec(string $keyWord,
                          string $city,
@@ -31,8 +33,7 @@ class KeyWord
                          string $orderby = null,
                          bool $jsonFormat = true,
                          string $callback = null
-    )
-    {
+    ) {
         $output = $jsonFormat ? 'json' : 'jsonp';
 
         $data = [
@@ -43,7 +44,7 @@ class KeyWord
             'filter' => $filter,
             'orderby' => $orderby,
             'output' => $output,
-            'callback' => $callback
+            'callback' => $callback,
         ];
 
         return TencentMap::exec(self::URL, $data);

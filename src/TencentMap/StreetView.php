@@ -5,7 +5,7 @@ namespace TencentMap;
 use TencentMap\Error\TencentMapError;
 
 /**
- * 根据指定坐标及半径，查询该坐标所在位置附近的最近场景点，返回场景点ID等信息
+ * 根据指定坐标及半径，查询该坐标所在位置附近的最近场景点，返回场景点ID等信息.
  *
  * @link http://lbs.qq.com/webservice_v1/guide-adsorb.html
  */
@@ -19,8 +19,10 @@ class StreetView
      * @param int    $radius 计算半径，取该坐标指定半径范围内的全景点ID。最大值：200，单位：米
      * @param bool   $jsonFormat
      * @param string $callback
-     * @return mixed
+     *
      * @throws TencentMapError
+     *
+     * @return mixed
      */
     public function exec(int $radius = 200, bool $jsonFormat = true, string $callback = null)
     {
@@ -28,12 +30,12 @@ class StreetView
             throw new TencentMapError(null, 310);
         }
 
-        $output = $jsonFormat ? "json" : "jsonp";
+        $output = $jsonFormat ? 'json' : 'jsonp';
 
         $data = [
             'radius' => $radius,
             'output' => $output,
-            'callback' => $callback
+            'callback' => $callback,
         ];
 
         $data = array_merge($data, $this->select);
@@ -65,5 +67,4 @@ class StreetView
     {
         $this->select = ['poi' => $poiId];
     }
-
 }

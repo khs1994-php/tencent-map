@@ -5,7 +5,7 @@ namespace TencentMap;
 use TencentMap\Error\TencentMapError;
 
 /**
- * 其他地图服务商坐标转腾讯坐标
+ * 其他地图服务商坐标转腾讯坐标.
  *
  * @link http://lbs.qq.com/webservice_v1/guide-convert.html
  */
@@ -49,8 +49,10 @@ class Translate
      * @param string      $locations
      * @param bool        $jsonFormat
      * @param string|null $callback
-     * @return TencentMap
+     *
      * @throws TencentMapError
+     *
+     * @return TencentMap
      */
     public function exec(string $locations, bool $jsonFormat = true, string $callback = null)
     {
@@ -67,6 +69,5 @@ class Translate
         ];
 
         return TencentMap::exec(self::URL, $data);
-
     }
 }

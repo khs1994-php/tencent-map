@@ -22,7 +22,7 @@ class TencentMapError extends \Error
             $message = null;
         }
 
-        $this->message = $message ?? self::ERROR_ARRAY[$code] ?? "未知错误";
+        $this->message = $message ?? self::ERROR_ARRAY[$code] ?? '未知错误';
 
         $this->code = $code;
     }

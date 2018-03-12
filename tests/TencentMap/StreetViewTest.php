@@ -48,5 +48,4 @@ class StreetViewTest extends TencentMapTests
         file_put_contents(__DIR__.'/../output/streetView'.$this->name.'.json', $this->output);
         $this->assertEquals(0, json_decode($this->output)->status);
     }
-
 }
