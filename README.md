@@ -2,6 +2,8 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/khs1994-php/tencent-map.svg?style=social&label=Stars)](https://github.com/khs1994-php/tencent-map) [![PHP from Packagist](https://img.shields.io/packagist/php-v/khs1994/tencent-map.svg)](https://packagist.org/packages/khs1994/tencent-map) [![GitHub (pre-)release](https://img.shields.io/github/release/khs1994-php/tencent-map/all.svg)](https://github.com/khs1994-php/tencent-map/releases) [![Build Status](https://travis-ci.org/khs1994-php/tencent-map.svg?branch=master)](https://travis-ci.org/khs1994-php/tencent-map) [![StyleCI](https://styleci.io/repos/115306597/shield?branch=master)](https://styleci.io/repos/115306597)
 
+* [官方文档](http://lbs.qq.com/webservice_v1/index.html)
+
 ## Installation
 
 To Use Tencent Map SDK, simply:
